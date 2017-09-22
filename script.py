@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 INPUT_FOLDER="/Users/i314050/work/paul_phd/input"
-SEPARATOR = "/"
+SEPARATOR = os.path.sep
 
 points = []
 
