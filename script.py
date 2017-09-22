@@ -8,6 +8,7 @@ SEPARATOR = os.path.sep
 
 points = []
 
+#This is an object to store the X / Y values
 class Entry:
    xAxisValue = 0
    yAxisValue = 0
@@ -22,11 +23,13 @@ class Entry:
    def debug(self):
       print(self.toString())
 
+#This loads the files
 def loadFiles():
    for filename in os.listdir(INPUT_FOLDER):
       if filename.endswith(".txt"):
          readFile(INPUT_FOLDER + SEPARATOR + filename)
 
+#This reads the files
 def readFile(filename):
    inputFile = open(filename, 'r')
    content = inputFile.readlines()
@@ -45,6 +48,7 @@ def readFile(filename):
    print("Loaded - " + str(len(points)))
    inputFile.close()
 
+#This handles actually plotting the graph
 def plotGraph():
    print("Plotting graph: " +str(len(points)))
    xValues = []
@@ -69,6 +73,7 @@ def plotGraph():
    plt.ylabel('y')
    plt.show()
 
+#This is the main method
 if __name__ == '__main__':
    print("Running script. Input=" + INPUT_FOLDER)
    loadFiles()
